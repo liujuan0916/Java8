@@ -1,7 +1,5 @@
 package com.lj.java8;
 
-import lombok.Data;
-
 /**
  * @author LiuJuan
  * @projectName java8
@@ -11,14 +9,30 @@ import lombok.Data;
  */
 
 public class Employee {
-    String name;
-    Integer age;
-    Double salary;
+    private String name;
+    private Integer age;
+    private Double salary;
+    private Status status;
 
     public Employee(String name, Integer age, Double salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
+    }
+
+    public Employee(String name, Integer age, Double salary, Status status) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     public String getName() {
@@ -51,7 +65,14 @@ public class Employee {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
+                ", status=" + status +
                 '}';
+    }
+
+    public enum  Status{
+        BUSY,
+        FREE,
+        Vacation
     }
 
 }
