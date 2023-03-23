@@ -2,13 +2,14 @@ package querywrapperdemo.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.example.querywrapperdemo.dao.UserMapper;
-import com.example.querywrapperdemo.entity.User;
+import querywrapperdemo.dao.UserMapper;
+import querywrapperdemo.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import java.util.*;
 
@@ -20,7 +21,7 @@ import java.util.*;
 public class UserController {
 
     @Autowired
-    private UserMapper  userMapper;
+    private UserMapper userMapper;
 
     /**
      * 案例一：根据name模糊查看未删除的用户列表信息
