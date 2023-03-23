@@ -278,7 +278,6 @@ public class UserController {
         List<User> list = userMapper.selectList(wrapper);
         result.put("data",list);
         return result;
-
     }
 
 }
