@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author qzz
  */
 @SpringBootApplication
-@MapperScan("com.example.querywrapperdemo.dao")
+@MapperScan("querywrapperdemo.dao")
 public class QuerywrapperDemoApplication {
 
     public static void main(String[] args) {

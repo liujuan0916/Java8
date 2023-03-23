@@ -1,6 +1,7 @@
 package querywrapperdemo.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -35,7 +36,7 @@ public class User implements Serializable {
      * 删除标识 0：正常 1：删除  默认0
      */
     @TableField("del_flag")
-    private Integer del_flag;
+    private Integer delFlag;
 
     /**
      * 邮箱
@@ -47,11 +48,13 @@ public class User implements Serializable {
      * 创建时间
      */
     @TableField(value = "create_time", fill = FieldFill.INSERT)
-    private Date create_time;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
+    private Date createTime;
 
     /**
      * 修改时间
      */
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     @TableField(value = "update_time", fill = FieldFill.INSERT_UPDATE)
-    private Date update_time;
+    private Date updateTime;
 }

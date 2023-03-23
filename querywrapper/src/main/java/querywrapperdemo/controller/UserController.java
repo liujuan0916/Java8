@@ -5,12 +5,12 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import querywrapperdemo.dao.UserMapper;
 import querywrapperdemo.entity.User;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
@@ -20,7 +20,7 @@ import java.util.*;
 @RestController
 public class UserController {
 
-    @Autowired
+    @Resource
     private UserMapper userMapper;
 
     /**
@@ -81,7 +81,7 @@ public class UserController {
         wrapper.eq("del_flag",0);
         //按创建时间降序
         wrapper.
-                orderByDesc("creat_time");
+                orderByDesc("create_time");
 
         List<User> list = userMapper.selectList(wrapper);
         result.put("data",list);
@@ -110,7 +110,7 @@ public class UserController {
         //未删除的
         wrapper.eq("del_flag",0);
         //按创建时间降序
-        wrapper.orderByDesc("creat_time");
+        wrapper.orderByDesc("create_time");
 
         List<User> list = userMapper.selectList(wrapper);
         result.put("data",list);
