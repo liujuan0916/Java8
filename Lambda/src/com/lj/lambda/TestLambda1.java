@@ -57,7 +57,4 @@ public class TestLambda1 {
         Collections.sort(strings, (a,b) -> a.length() - b.length());
         System.out.println(strings);
     }
-
-
-
 }
